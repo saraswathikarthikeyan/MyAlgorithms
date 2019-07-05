@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace ValidateConfigItems
 {
     //Class to hold the List of Configuration 
-    public class configuration
+    public class Configuration
     {
-        public List<configItems> configItems;
+        public List<ConfigItems> configItems;
     }
 
     //Class contains the Properties of the Configuration
-    public class configItems
+    public class ConfigItems
     {
         public int item;
         public List<int> lstDeduction;
@@ -23,29 +23,29 @@ namespace ValidateConfigItems
     class Program
     {
         //Method fetches the Configuration Items from DB and Stores in the Class
-        public static configuration fetchConfigItems()
+        public static Configuration FetchConfigItems()
         {
-              var  configuration = new configuration()
+              var  configuration = new Configuration()
               {
-                configItems = new List<configItems>()
+                configItems = new List<ConfigItems>()
                 {
-                    new configItems() { item=1, lstDeduction = new List<int>{ 300}, lstYear = new List<int>(),lstPostal = new List<int>()},
-                    new configItems() { item=2, lstDeduction = new List<int>{ 2500}, lstYear = new List<int>{ 1982 },lstPostal = new List<int>()},
-                    new configItems() { item=3, lstDeduction = new List<int>{ 1000}, lstYear = new List<int>{ 1966,1963 },lstPostal = new List<int>{ 8000} },
-                    new configItems() { item=4, lstDeduction = new List<int>{ 2000}, lstYear = new List<int>{ 1990},lstPostal = new List<int>{ 8112,8113}},
+                    new ConfigItems() { item=1, lstDeduction = new List<int>{ 300}, lstYear = new List<int>(),lstPostal = new List<int>()},
+                    new ConfigItems() { item=2, lstDeduction = new List<int>{ 2500}, lstYear = new List<int>{ 1982 },lstPostal = new List<int>()},
+                    new ConfigItems() { item=3, lstDeduction = new List<int>{ 1000}, lstYear = new List<int>{ 1966,1963 },lstPostal = new List<int>{ 8000} },
+                    new ConfigItems() { item=4, lstDeduction = new List<int>{ 2000}, lstYear = new List<int>{ 1990},lstPostal = new List<int>{ 8112,8113}},
                 }
               };
             return configuration;
         }
 
         //Method checks the Configuration Items and returns "YES" or "NO" to showthe button
-        public static string checkShowButton(int deduction, int year, int postal)
+        public static string CheckShowButton(int deduction, int year, int postal)
         {
            
             string strDeduction = "", strPostal = "", strYear = "", showbutton = "yes";
 
             try {
-                    var objConfiguraion = fetchConfigItems();
+                    var objConfiguraion = FetchConfigItems();
                     foreach (var items in objConfiguraion.configItems)
                     {
                         //Console.WriteLine(items.item);
@@ -95,11 +95,11 @@ namespace ValidateConfigItems
         static void Main(string[] args)
         {      
             //Input Items
-            int ip_deduction = 2000;
+            int ip_deduction = 3001;
             int ip_year = 1990;
             int ip_postal = 8112;
 
-            Console.WriteLine(checkShowButton(ip_deduction, ip_year, ip_postal));
+            Console.WriteLine(CheckShowButton(ip_deduction, ip_year, ip_postal));
             Console.ReadLine();
         }                
     }
