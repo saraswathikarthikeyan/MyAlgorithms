@@ -1,0 +1,6 @@
+C:\Users\sarak\Saraswathi\Workspace\DotNet\ValidateConfigItems\ValidateConfigItems\bin\Debug\ValidateConfigItems.exe.config
+C:\Users\sarak\Saraswathi\Workspace\DotNet\ValidateConfigItems\ValidateConfigItems\bin\Debug\ValidateConfigItems.exe
+C:\Users\sarak\Saraswathi\Workspace\DotNet\ValidateConfigItems\ValidateConfigItems\bin\Debug\ValidateConfigItems.pdb
+C:\Users\sarak\Saraswathi\Workspace\DotNet\ValidateConfigItems\ValidateConfigItems\obj\Debug\ValidateConfigItems.csprojResolveAssemblyReference.cache
+C:\Users\sarak\Saraswathi\Workspace\DotNet\ValidateConfigItems\ValidateConfigItems\obj\Debug\ValidateConfigItems.exe
+C:\Users\sarak\Saraswathi\Workspace\DotNet\ValidateConfigItems\ValidateConfigItems\obj\Debug\ValidateConfigItems.pdb
