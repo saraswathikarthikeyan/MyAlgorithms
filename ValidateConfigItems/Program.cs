@@ -49,38 +49,45 @@ namespace ValidateConfigItems
                     foreach (var items in objConfiguraion.configItems)
                     {
                         //Console.WriteLine(items.item);
-                        if (items.lstDeduction.Count > 0 && items.lstDeduction.Contains(deduction)){
-                            strDeduction = "yes";
-                        }
-                        else if(items.lstDeduction.Count > 0) {
-                            strDeduction = "no";
-                        }
-
-                        if (items.lstYear.Count > 0 && items.lstYear.Contains(year)){
-                            strPostal = "yes";
-                        }
-                        else if (items.lstYear.Count > 0) {
-                            strPostal = "no";
+                        if (items.lstDeduction.Count > 0) {
+                            if (items.lstDeduction.Contains(deduction)) {
+                                strDeduction = "yes";
+                            }
+                            else { 
+                                strDeduction = "no";
+                            }
                         }
 
-                        if (items.lstPostal.Count > 0 && items.lstPostal.Contains(postal)) {
-                            strYear = "yes";
+                        if (items.lstYear.Count > 0) {
+                            if (items.lstYear.Contains(year)){
+                                strPostal = "yes";
+                            }
+                            else {
+                                strPostal = "no";
+                            }
                         }
-                        else if (items.lstPostal.Count > 0){
-                            strYear = "no";
-                        }
+                       
 
+                        if (items.lstPostal.Count > 0 ) {
+                            if(items.lstPostal.Contains(postal)) { 
+                                strYear = "yes";
+                            }
+                            else {
+                                strYear = "no";
+                            }
+                        }
+                        
                         //Console.WriteLine("ded: {0}, year: {1}, postal:{2}", strDeduction, strPostal, strYear);
                         if ((strDeduction == "" || strDeduction == "yes") && (strPostal == "" || strPostal == "yes") && (strYear == "" || strYear == "yes"))
                         {
                             showbutton = "no"; break;
                         }
                     }
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
+                }   
+                catch(Exception ex)
+                {
+                    throw ex;
+                }
 
             return showbutton;
         }
@@ -88,9 +95,9 @@ namespace ValidateConfigItems
         static void Main(string[] args)
         {      
             //Input Items
-            int ip_deduction = 1000;
-            int ip_year = 1960;
-            int ip_postal = 8000;
+            int ip_deduction = 2000;
+            int ip_year = 1990;
+            int ip_postal = 8112;
 
             Console.WriteLine(checkShowButton(ip_deduction, ip_year, ip_postal));
             Console.ReadLine();
